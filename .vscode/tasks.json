@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "C:/mingw64/bin/g++.exe",
+      "args": [
+        "-std=c++17",
+        "${workspaceFolder}/src/main.cpp",
+        "${workspaceFolder}/src/orderbook.cpp",
+
+        "-IC:/dev/vcpkg/installed/x64-mingw-dynamic/include",
+        "C:/dev/vcpkg/installed/x64-mingw-dynamic/lib/libboost_json-gcc8-mt-x64-1_90.dll.a",
+        "C:/dev/vcpkg/installed/x64-mingw-dynamic/lib/libssl.dll.a",
+        "C:/dev/vcpkg/installed/x64-mingw-dynamic/lib/libcrypto.dll.a",
+        "-lws2_32",
+        "-o",
+        "${workspaceFolder}/build/app.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
